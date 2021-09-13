@@ -1,13 +1,15 @@
 import React from 'react'
-// import { Field, Form } from 'react-final-form'
+import './style.css'
+// import { Field, Form as FinalForm } from 'react-final-form'
 
-const Card = () => {
+const Form = () => {
   return (
-    <form>
-      <label>title</label>
-      <input type="text" />
-    </form>
+    <div className="container">
+      <form>
+        <input placeholder="title" type="text" />
+      </form>
+    </div>
   )
 }
 
-export default Card
+export default Form
