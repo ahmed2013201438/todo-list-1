@@ -19,20 +19,20 @@ const truncateText = (text = '', stringLength = 80) => {
 };
 
 const View = () => {
-  const url = 'https://yts.mx/api/v2/list_movies.json'
-  const { data, isLoading } = useQuery(['todos', url], () => fetchAPI(url),
+  const url = 'https://yts.mx/api/v2/list_movies.json?genre=Animation'
+  const { data, isLoading, ...p } = useQuery(['todos', url], () => fetchAPI(url),
     { onSuccess: () => console.log('done'), select: data => data.data.movies }
   )
-
+console.log('data :>> ', data);
   return (
     <div className="App">
       {isLoading && 'LOADING...'}
       {!isLoading && (
         <div className="container">
-          {data.map(item => {
+          {data?.map(item => {
             return (
               <div className="cards">
-                <img alt="" src={item.background_image} className="imgCard" />
+                <img alt="" src={item.medium_cover_image} className="imgCard" />
                 <main className="mainCard">
                   <p>{item.date_uploaded}</p>
                   <h3>{truncateText(item.title, 25)}</h3>

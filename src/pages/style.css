@@ -35,6 +35,8 @@
   align-items: center;
   color: #fff;
   text-decoration: unset;
+  transition: 1000ms ease 1S;
+  transition-property: none;
 }
 
 .footerCard:hover {
@@ -42,7 +44,6 @@
   left: 1px;
   position: relative;
   cursor: pointer;
-  transition: ease 1000ms;
 
 }
 
